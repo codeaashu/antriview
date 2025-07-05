@@ -13,8 +13,7 @@ export async function signUp(params: SignUpParams) {
 
         if(userRecord.exists) {
             return {
-                suc
-                cess: false,
+                success: false,
                 message: 'User already exists. Please sign in.',
             }
         }
