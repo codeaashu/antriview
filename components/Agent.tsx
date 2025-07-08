@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { vapi } from '@/lib/vapi.sdk';
+import { interviewer } from "@/constants";
 
 enum CallStatus {
     INACTIVE = 'INACTIVE',
@@ -38,16 +39,19 @@ const Agent = ({ userName, userId, type, interviewId, questions }: AgentProps) =
     const [callStatus, setCallStatus] = useState<CallStatus>(CallStatus.INACTIVE);
     const [message, setMessage] = useState<SavedMessage[]>([]);
 
-    const handleGenerateFeedback = async () => {
-        console.log('Generating feedback here...');
+    const handleGenerateFeedback = async (messages: SavedMessage[]) => {
+        console.log('Generate feedback here.');
+
+        // TODO: Create a server action that generates feedback
         const { success, id } = {
             success: true,
             id: 'feedback-id'
-        };
+        }
+
         if (success && id) {
             router.push(`/interview/${interviewId}/feedback`);
         } else {
-            console.log('Failed to generate feedback');
+            console.log('Error saving feedback');
             router.push('/');
         }
     };
@@ -93,10 +97,10 @@ const Agent = ({ userName, userId, type, interviewId, questions }: AgentProps) =
 
     useEffect(() => {
         if (callStatus === CallStatus.FINISHED) {
-            if (type === 'generate') {
-                router.push('/');
+            if (type === "generate") {
+                router.push('/')
             } else {
-                handleGenerateFeedback();
+                handleGenerateFeedback(message);
             }
         }
     }, [message, callStatus, type, userId, router, interviewId]);
@@ -126,7 +130,7 @@ const Agent = ({ userName, userId, type, interviewId, questions }: AgentProps) =
                         .join("\n");
                 }
 
-                await vapi.start(interviewId, {
+                await vapi.start(interviewer, {
                     variableValues: {
                         questions: formattedQuestions,
                     },

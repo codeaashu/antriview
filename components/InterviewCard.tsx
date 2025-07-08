@@ -10,20 +10,21 @@ import { cn, getRandomInterviewCover } from "@/lib/utils";
 
 
 const InterviewCard = async ({
-  interviewId,
+  id,
   userId,
   role,
   type,
   techstack,
   createdAt,
 }: InterviewCardProps) => {
-  const feedback =
-    userId && interviewId
-      ? await getFeedbackByInterviewId({
-          interviewId,
-          userId,
-        })
-      : null;
+  const feedback = null as Feedback | null;
+  // const feedback =
+  //   userId && id
+  //     ? await getFeedbackByInterviewId({
+  //         interviewId,
+  //         userId,
+  //       })
+  //     : null;
 
   const normalizedType = /mix/gi.test(type) ? "Mixed" : type;
 
@@ -96,8 +97,8 @@ const InterviewCard = async ({
             <Link
               href={
                 feedback
-                  ? `/interview/${interviewId}/feedback`
-                  : `/interview/${interviewId}`
+                  ? `/interview/${id}/feedback`
+                  : `/interview/${id}`
               }
             >
               {feedback ? "Check Feedback" : "View Interview"}
