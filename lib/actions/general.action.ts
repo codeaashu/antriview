@@ -118,3 +118,50 @@ export async function getFeedbackByInterviewId(params: GetFeedbackByInterviewIdP
             ...feedbackDoc.data()
         } as Feedback;
 }
+
+export async function getFeedbackByInterviewIdPublic(interviewId: string): Promise<Feedback | null> {
+    // This allows anyone to see feedback for any interview
+    const feedback = await db.collection('feedback')
+        .where('interviewId', '==', interviewId)
+        .limit(1)
+        .get();
+
+    if(feedback.empty) return null;
+
+    const feedbackDoc = feedback.docs[0];
+    return {
+        id: feedbackDoc.id,
+        ...feedbackDoc.data()
+    } as Feedback;
+}
+
+export async function getFeedbackWithAccess(params: { interviewId: string; currentUserId: string }): Promise<Feedback | null> {
+    const { interviewId, currentUserId } = params;
+    
+    // First, get the interview to see who created it
+    const interview = await getInterviewById(interviewId);
+    if (!interview) return null;
+    
+    // Get feedback for this interview
+    const feedback = await db.collection('feedback')
+        .where('interviewId', '==', interviewId)
+        .limit(1)
+        .get();
+    
+    if(feedback.empty) return null;
+    
+    const feedbackDoc = feedback.docs[0];
+    const feedbackData = feedbackDoc.data();
+    
+    // Allow access if user is either:
+    // 1. The person who took the interview (feedbackData.userId)
+    // 2. The person who created the interview (interview.userId)
+    if (feedbackData.userId === currentUserId || interview.userId === currentUserId) {
+        return {
+            id: feedbackDoc.id,
+            ...feedbackData
+        } as Feedback;
+    }
+    
+    return null; // No access
+}
