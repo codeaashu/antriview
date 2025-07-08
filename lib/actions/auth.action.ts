@@ -2,6 +2,7 @@
 
 import { auth, db } from "@/firebase/admin";
 import { cookies } from "next/headers";
+import { generateDefaultProfilePicture, getUserInitials } from "@/lib/utils";
 
 const ONE_WEEK = 60 * 60 * 24 * 7;
 
@@ -18,9 +19,16 @@ export async function signUp(params: SignUpParams) {
             }
         }
 
+        // Generate default profile picture and initials
+        const profilePicture = generateDefaultProfilePicture(name);
+        const profileInitials = getUserInitials(name);
+
         await db.collection('users').doc(uid).set({
             name,
-            email
+            email,
+            profilePicture,
+            profileInitials,
+            createdAt: new Date().toISOString(),
         })
 
         return {
@@ -28,10 +36,11 @@ export async function signUp(params: SignUpParams) {
             message: 'Account created successfully. Please sign in.',
         }
 
-    }  catch (e: any) {
-        console.error("Error creating a user",  e);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    }  catch (error: any) {
+        console.error("Error creating a user",  error);
 
-        if(error.code === 'auth/email-already-exists') {
+        if(error?.code === 'auth/email-already-exists') {
             return {
                 success: false,
                 message: 'This email is already in use.',
@@ -97,9 +106,14 @@ export async function getCurrentUser(): Promise<User | null> {
         
         if (!userRecord.exists) return null;
 
+        const userData = userRecord.data();
+        
         return {
-            ...userRecord.data(),
+            name: userData?.name || '',
+            email: userData?.email || '',
             id: userRecord.id,
+            profilePicture: userData?.profilePicture || generateDefaultProfilePicture(userData?.name || ''),
+            profileInitials: userData?.profileInitials || getUserInitials(userData?.name || ''),
         } as User;
     } catch (error) {
         console.log(error);

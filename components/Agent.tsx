@@ -22,8 +22,10 @@ interface SavedMessage {
 interface AgentProps {
     userName: string;
     userId: string;
+    userProfilePicture?: string;
+    userInitials?: string;
     type: 'generate' | 'interview';
-    interviewId: string;
+    interviewId?: string;
     questions?: string[];
 }
 
@@ -34,19 +36,27 @@ interface Message {
     transcript: string;
 }
 
-const Agent = ({ userName, userId, type, interviewId, questions }: AgentProps) => {
+const Agent = ({ userName, userId, userProfilePicture, userInitials, type, interviewId, questions }: AgentProps) => {
     const router = useRouter();
     const [isSpeaking, setIsSpeaking] = useState(false);
     const [callStatus, setCallStatus] = useState<CallStatus>(CallStatus.INACTIVE);
     const [message, setMessage] = useState<SavedMessage[]>([]);
+    const [imageError, setImageError] = useState(false);
 
     const handleGenerateFeedback = useCallback(async (messages: SavedMessage[]) => {
         console.log('Generate feedback here.', messages);
 
+        // Only generate feedback for interview type, not generate type
+        if (type !== 'interview' || !interviewId) {
+            console.log('Skipping feedback generation for generate type or missing interviewId');
+            router.push('/');
+            return;
+        }
+
         try {
             const { success, feedbackId: id } = await createFeedback({
-                interviewId: interviewId!,
-                userId: userId!,
+                interviewId: interviewId,
+                userId: userId,
                 transcript: messages
             });
 
@@ -62,7 +72,7 @@ const Agent = ({ userName, userId, type, interviewId, questions }: AgentProps) =
             console.error('Error in handleGenerateFeedback:', error);
             router.push('/');
         }
-    }, [interviewId, userId, router]);
+    }, [interviewId, userId, router, type]);
 
     useEffect(() => {
         const onCallStart = () => setCallStatus(CallStatus.ACTIVE);
@@ -175,7 +185,20 @@ const Agent = ({ userName, userId, type, interviewId, questions }: AgentProps) =
 
                 <div className='card-border'>
                     <div className='card-content'>
-                        <Image src="/user-avatar.png" className='rounded-full object-cover size-[120px]' alt="Avatar" width={540} height={540} />
+                        {!imageError && userProfilePicture ? (
+                            <Image 
+                                src={userProfilePicture} 
+                                className='rounded-full object-cover size-[120px]' 
+                                alt={userName} 
+                                width={120} 
+                                height={120}
+                                onError={() => setImageError(true)}
+                            />
+                        ) : (
+                            <div className='rounded-full bg-gradient-to-br from-blue-500 to-purple-600 size-[120px] flex items-center justify-center text-white text-2xl font-bold shadow-lg'>
+                                {userInitials || userName.charAt(0).toUpperCase()}
+                            </div>
+                        )}
                         <h3>{userName}</h3>
                     </div>
                 </div>

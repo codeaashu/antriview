@@ -36,6 +36,8 @@ interface User {
   name: string;
   email: string;
   id: string;
+  profilePicture?: string; // URL to profile picture
+  profileInitials?: string; // Fallback initials
 }
 
 interface InterviewCardProps {

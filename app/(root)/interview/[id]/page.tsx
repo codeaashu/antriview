@@ -6,13 +6,16 @@ import DisplayTechIcons from '@/components/DisplayTechIcons';
 import Agent from '@/components/Agent';
 import { getInterviewById } from "@/lib/actions/general.action";
 import { getCurrentUser } from '@/lib/actions/auth.action';
+import { RouteParams } from '@/types/index';
 
 const Page = async ({ params }: RouteParams) => {
     const { id } = await params;
     const user = await getCurrentUser();
+    
+    if (!user) redirect('/sign-in');
+    
     const interview = await getInterviewById(id);
-
-    if (!interview) redirect('/')
+    if (!interview) redirect('/');
 
     return (
         <>
@@ -24,10 +27,30 @@ const Page = async ({ params }: RouteParams) => {
                     </div>
                     <DisplayTechIcons techStack={interview.techstack} />
                 </div>
-                <p className="bg-dark-200 px-4 py-2 rounded-lg h-fit capitalize">{interview.type}</p>
+                <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2">
+                        <Image 
+                            src={user.profilePicture || `/user-avatar.jpg`} 
+                            alt="user-avatar" 
+                            width={32} 
+                            height={32} 
+                            className="rounded-full object-cover size-[32px]" 
+                        />
+                        <span className="text-sm font-medium">{user.name}</span>
+                    </div>
+                    <p className="bg-dark-200 px-4 py-2 rounded-lg h-fit capitalize">{interview.type}</p>
+                </div>
             </div>
 
-            <Agent userName={user?.name || ''} userId={user?.id} interviewId={id} type="interview" questions={interview.questions} />
+            <Agent 
+                userName={user.name} 
+                userId={user.id} 
+                userProfilePicture={user.profilePicture}
+                userInitials={user.profileInitials}
+                interviewId={id} 
+                type="interview" 
+                questions={interview.questions} 
+            />
         </>
     )
 }
