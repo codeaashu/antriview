@@ -2,6 +2,22 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+### Environment Setup
+
+1. Copy the example environment file:
+```bash
+cp .env.example .env.local
+```
+
+2. Fill in your actual configuration values in `.env.local`:
+   - Firebase configuration (API keys, project ID, etc.)
+   - Google AI API key
+   - VAPI configuration
+
+**Important**: Never commit `.env.local` or any environment files containing real API keys to version control.
+
+### Development
+
 First, run the development server:
 
 ```bash
@@ -32,5 +48,29 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+### Important: Environment Variables for Production
+
+When deploying to Vercel or any other platform, make sure to add all environment variables from your `.env.local` file to your deployment platform's environment variables section:
+
+1. Go to your Vercel dashboard
+2. Select your project
+3. Go to Settings → Environment Variables
+4. Add all the variables from `.env.local`
+
+**Required Environment Variables:**
+- `FIREBASE_PROJECT_ID`
+- `FIREBASE_PRIVATE_KEY`
+- `FIREBASE_CLIENT_EMAIL`
+- `NEXT_PUBLIC_FIREBASE_API_KEY`
+- `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN`
+- `NEXT_PUBLIC_FIREBASE_PROJECT_ID`
+- `NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET`
+- `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID`
+- `NEXT_PUBLIC_FIREBASE_APP_ID`
+- `NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID`
+- `GOOGLE_GENERATIVE_AI_API_KEY`
+- `NEXT_PUBLIC_VAPI_WEB_TOKEN`
+- `NEXT_PUBLIC_VAPI_WORKFLOW_ID`
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

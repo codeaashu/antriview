@@ -4,13 +4,13 @@ import { getAuth } from "firebase/auth";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAnK2shAv2AJoKOnD_3sRBemur2KgMmQKE",
-  authDomain: "antriview.firebaseapp.com",
-  projectId: "antriview",
-  storageBucket: "antriview.firebasestorage.app",
-  messagingSenderId: "242277738026",
-  appId: "1:242277738026:web:cd64891b63d02488190553",
-  measurementId: "G-06JP3XE65Y"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY!,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN!,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID!,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET!,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID!,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID!,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID!
 };
 
 const app = !getApps.length ? initializeApp(firebaseConfig) : getApp();
