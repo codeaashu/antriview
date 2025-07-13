@@ -58,8 +58,8 @@ export default function ComingSoon() {
         {/* Coming Soon Header */}
         <div className="flex justify-center pt-8 pb-4">
           <div className="bg-white/10 backdrop-blur-sm rounded-full px-8 py-4 border border-white/20 flex items-center space-x-3">
-            <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
-              <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+            <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center pulse-glow">
+              <div className="w-3 h-3 bg-white rounded-full pulse-professional"></div>
             </div>
             <span className="text-white text-lg font-semibold">Coming Soon</span>
           </div>
@@ -84,10 +84,10 @@ export default function ComingSoon() {
             {/* Main Headlines */}
             <div className="space-y-4 mb-12">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
-                &ldquo;The System for Systems That Never Worked.&rdquo;
+                The System for Systems That Never Worked.
               </h2>
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-400">
-                &ldquo;The Only System Built to Make You Unbreakable.&rdquo;
+                The Only System Built to Make You Unbreakable.
               </h3>
             </div>
 
