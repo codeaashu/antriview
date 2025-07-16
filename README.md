@@ -1,12 +1,12 @@
 <div align="center"> 
-<a href="https://antriview.systems/" target="_blank"><img src="./public/antriviewpunchline.png" width="450px" /></a>
+<a href="https://antriview.systems/" target="_blank"><img src="./public/antriviewpunchline.png" width="550px" /></a>
 </div></br></br>
 
 <div align="center"> 
 <img src="./public/antriviewicon.png" width="100px" /><br>
 <h1 align="center"><a href="https://antriview.systems/"><strong>antriview.systems</strong></a></h1>
 
-<a href="https://antriview.systems/" target="_blank"><img src="./public/antriviewslogan.png" width="300px" /></a>
+<a href="https://antriview.systems/" target="_blank"><img src="./public/antriviewslogan.png" width="500px" /></a>
 
 <!--<h4 align="center">✦ Transform your GitHub journey into a professional resume in seconds! ✦</h4>-->
   
