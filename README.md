@@ -67,8 +67,9 @@ Because the future of hiring prep is not 1:1 — it’s scalable, smart, and voi
 ---
 
 <div align="center"> 
-💡 _Antriview is not just a product. It’s a new standard in interview preparation._<br> 
-**Your Ruthless, Real-Time AI Interviewer — Built for Pressure. Not Just Practice.**
+  <h3 align="center"><strong>💡Antriview is not just a product. It’s a new standard in interview preparation.</strong></h3>
+<br> 
+Your Ruthless, Real-Time AI Interviewer — Built for Pressure. Not Just Practice.
 </div>
 
 <hr>
