@@ -3,7 +3,7 @@
 </div></br>
 
 <div align="center"> 
-<img src="./public/thisisantriview.png" width="400px" /><br>
+<img src="./public/thisisantriview.png" width="7500px" /><br>
 <h1 align="center"><a href="https://antriview.systems/"><strong>antriview.systems</strong></a></h1>
 
 <a href="https://antriview.systems/" target="_blank"><img src="./public/antriviewpunchline.png" width="750px" /></a>
