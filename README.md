@@ -67,11 +67,12 @@ Because the future of hiring prep is not 1:1 — it’s scalable, smart, and voi
 ---
 
 <div align="center"> 
-💡 _Antriview is not just a product. It’s a new standard in interview preparation._  
+💡 _Antriview is not just a product. It’s a new standard in interview preparation._<br> 
 **Your Ruthless, Real-Time AI Interviewer — Built for Pressure. Not Just Practice.**
 </div>
 
 <hr>
+
 # Getting Started 🚀 Setup Procedure ⚙️
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
