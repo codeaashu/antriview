@@ -68,13 +68,12 @@ Because the future of hiring prep is not 1:1 — it’s scalable, smart, and voi
 
 <div align="center"> 
   <h3 align="center"><strong>💡Antriview is not just a product. It’s a new standard in interview preparation.</strong></h3>
-<br> 
 Your Ruthless, Real-Time AI Interviewer — Built for Pressure. Not Just Practice.
 </div>
 
 <hr>
 
-# Getting Started 🚀 Setup Procedure ⚙️
+# 🚀 Getting Started Setup Procedure ⚙️
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
@@ -150,3 +149,14 @@ When deploying to Vercel or any other platform, make sure to add all environment
 - `NEXT_PUBLIC_VAPI_WORKFLOW_ID`
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+<hr>
+
+## 👨‍💻 Built By
+
+**Ashutosh Kumar**  
+[🌐 www.ashutoshkumar.me](https://www.ashutoshkumar.me)  
+[💻 GitHub: @codeaashu](https://github.com/codeaashu)  
+🆔 College ID: **17427**
+
+<hr>
