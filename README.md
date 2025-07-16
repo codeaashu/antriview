@@ -1,4 +1,19 @@
-#Antriview
+<div align="center"> 
+<a href="https://antriview.systems/" target="_blank"><img src="./public/antriviewpunchline.png" width="300px" /></a>
+</div></br></br>
+
+<div align="center"> 
+<img src="./public/antriviewlogo.png" width="100px" /><br>
+<h1 align="center"><a href="https://antriview.systems/"><strong>antriview.systems</strong></a></h1>
+
+<a href="https://antriview.systems/" target="_blank"><img src="./public/antriviewslogan.png" width="300px" /></a>
+
+<!--<h4 align="center">✦ Transform your GitHub journey into a professional resume in seconds! ✦</h4>-->
+  
+  
+`Antriview is a AI powered mock interview preparation platform that utilizes real time AI voice agents to simulate realistic interview experiences. Designed to help users practice and enhance their communication and interview skills, the platform offers an immersive environment where users interact with voice based AI agents, receive instant feedback, and track their improvement over time.`
+<hr></div>
+
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
