@@ -1,0 +1,207 @@
+{
+  "name": "antriview ",
+  "nodes": [
+    {
+      "name": "start_call",
+      "type": "start",
+      "metadata": {
+        "position": {
+          "x": 281.00001525878906,
+          "y": 120.60000228881836
+        }
+      }
+    },
+    {
+      "name": "conversation_1751552019231",
+      "type": "conversation",
+      "metadata": {
+        "position": {
+          "x": 180.3684661804657,
+          "y": 202.69944042713703
+        }
+      },
+      "prompt": "Greet the user. Inform them that you will get some information from them, to create a perfect interview. Ask the caller for data required to extract. Ask the questions one by one, and await an answer.\n",
+      "variableExtractionPlan": {
+        "output": [
+          {
+            "enum": [],
+            "type": "string",
+            "title": "role",
+            "description": "What role would you like to train for?"
+          },
+          {
+            "enum": [],
+            "type": "string",
+            "title": "type",
+            "description": "Are you aiming for a technical, behavioral, or mixed interview?"
+          },
+          {
+            "enum": [
+              "entry",
+              "mid",
+              "senior"
+            ],
+            "type": "string",
+            "title": "level",
+            "description": "The job experience level"
+          },
+          {
+            "enum": [],
+            "type": "string",
+            "title": "techstack",
+            "description": "A list of technologies to cover during the job interview."
+          },
+          {
+            "enum": [],
+            "type": "number",
+            "title": "amount",
+            "description": "How many questions would you like to generate?"
+          }
+        ]
+      },
+      "messagePlan": {
+        "firstMessage": ""
+      }
+    },
+    {
+      "name": "apiRequest_1751558933271",
+      "type": "tool",
+      "metadata": {
+        "position": {
+          "x": 189.36745182288445,
+          "y": 632.6867936283295
+        }
+      },
+      "tool": {
+        "url": "https://antriview.vercel.app/api/vapi/generate",
+        "body": {
+          "type": "object",
+          "required": [
+            "role",
+            "type",
+            "level",
+            "amount",
+            "userid",
+            "techstack"
+          ],
+          "properties": {
+            "role": {
+              "type": "string",
+              "value": "{{ role }}",
+              "description": ""
+            },
+            "type": {
+              "type": "string",
+              "value": "{{ type }}",
+              "description": ""
+            },
+            "level": {
+              "type": "string",
+              "value": "{{ level }}",
+              "description": ""
+            },
+            "amount": {
+              "type": "number",
+              "value": "{{ amount }}",
+              "description": ""
+            },
+            "userid": {
+              "type": "string",
+              "value": "{{ userid }}",
+              "description": ""
+            },
+            "techstack": {
+              "type": "string",
+              "value": "{{ techstack }}",
+              "description": ""
+            }
+          }
+        },
+        "name": "getUserData",
+        "type": "apiRequest",
+        "method": "POST",
+        "function": {
+          "name": "untitled_tool",
+          "parameters": {
+            "type": "object",
+            "required": [],
+            "properties": {}
+          }
+        },
+        "messages": [
+          {
+            "type": "request-start",
+            "content": "Please hold on. I'm sending a request to the app.",
+            "blocking": true
+          },
+          {
+            "role": "assistant",
+            "type": "request-complete",
+            "content": "The request has been sent and your interview has been generated. Thank you for the call! Bye!",
+            "endCallAfterSpokenEnabled": true
+          },
+          {
+            "type": "request-failed",
+            "content": "Oops! Looks like something went wrong when sending the data to the app! Please try again.",
+            "endCallAfterSpokenEnabled": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "hangup_1751617600243",
+      "type": "tool",
+      "metadata": {
+        "position": {
+          "x": 192.9291205385132,
+          "y": 861.1969946049213
+        }
+      },
+      "tool": {
+        "type": "endCall",
+        "function": {
+          "name": "untitled_tool",
+          "parameters": {
+            "type": "object",
+            "required": [],
+            "properties": {}
+          }
+        },
+        "messages": [
+          {
+            "type": "request-start",
+            "content": "Everything has been generated. I'll redirect you to the dashboard now, thanks for the call!",
+            "blocking": true
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "start_call",
+      "to": "conversation_1751552019231",
+      "condition": {
+        "type": "ai",
+        "prompt": ""
+      }
+    },
+    {
+      "from": "conversation_1751552019231",
+      "to": "apiRequest_1751558933271",
+      "condition": {
+        "type": "ai",
+        "prompt": "If user provided all the data to be extracted."
+      }
+    },
+    {
+      "from": "apiRequest_1751558933271",
+      "to": "hangup_1751617600243",
+      "condition": {
+        "type": "ai",
+        "prompt": ""
+      }
+    }
+  ],
+  "globalPrompt": "You are a voice assistant helping with creating new AI interviewers. Your task is to collect data from the user. Remember that this is a voice conversation - do not use any special characters."
+}
