@@ -5,7 +5,7 @@
 <div align="center"> 
 <a href="https://antriview.systems/" target="_blank"><img src="./public/antriviewtext.png" width="350px" /></a><br><br>
 <img src="./public/thisisantriview.png" width="750px" /><br>
-<h1 align="center"><a href="https://antriview.systems/"><strong>antriview.systems</strong></a></h1>
+<h1 align="center"><a href="https://antriview.systems/"><strong>✦ antriview.systems ✦</strong></a></h1>
 
 <a href="https://antriview.systems/" target="_blank"><img src="./public/antriviewpunchline.png" width="750px" /></a>
 
