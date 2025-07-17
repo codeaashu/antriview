@@ -334,16 +334,16 @@
 }
 
 /* Coming Soon page animation delays */
-/* .animation-delay-2000 {
+.animation-delay-2000 {
   animation-delay: 2s;
 }
 
 .animation-delay-4000 {
   animation-delay: 4s;
-} */
+}
 
 /* Professional pulsing animation for status indicators */
-/* @keyframes professional-pulse {
+@keyframes professional-pulse {
   0% {
     transform: scale(1);
     opacity: 1;
@@ -356,14 +356,14 @@
     transform: scale(1);
     opacity: 1;
   }
-} */
+}
 
-/* .pulse-professional {
+.pulse-professional {
   animation: professional-pulse 2s ease-in-out infinite;
-} */
+}
 
 /* Smooth glow pulse for coming soon indicator */
-/* @keyframes glow-pulse {
+@keyframes glow-pulse {
   0% {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
@@ -379,8 +379,8 @@
     box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
     opacity: 1;
   }
-} */
+}
 
-/* .pulse-glow {
+.pulse-glow {
   animation: glow-pulse 2.5s ease-in-out infinite;
-} */
+}
