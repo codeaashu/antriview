@@ -148,7 +148,7 @@ export default function ComingSoon() {
               Let&apos;s connect on LinkedIn and stay updated with Antriview.
             </p>
             <Link 
-              href="https://www.linkedin.com/in/ashutoshkumaraashu/" 
+              href="https://www.linkedin.com/company/antriview/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-blue-400 hover:text-blue-300 transition-colors duration-200 font-medium"
