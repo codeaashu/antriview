@@ -9,8 +9,8 @@
 
 <a href="https://antriview.systems/" target="_blank"><img src="./public/antriviewpunchline.png" width="750px" /></a>
 
-<!--<h4 align="center">✦ Transform your GitHub journey into a professional resume in seconds! ✦</h4>-->
-  
+<!--<h4 align="center">✦ Transform Your GitHub Journey! ✦</h4>-->
+ 
   
 `Antriview is a AI powered mock interview preparation platform that utilizes real time AI voice agents to simulate realistic interview experiences. Designed to help users practice and enhance their communication and interview skills, the platform offers an immersive environment where users interact with voice based AI agents, receive instant feedback, and track their improvement over time.`
 <hr><img src="./public/Interview Page.png" /></div>
