@@ -152,11 +152,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 <hr>
 
-## 👨‍💻 Built By
+<!-- ## 👨‍💻 Built By
 
 **Ashutosh Kumar**  
 [🌐 www.ashutoshkumar.me](https://www.ashutoshkumar.me)  
 [💻 GitHub: @codeaashu](https://github.com/codeaashu)  
-🆔 College ID: **17427**
+🆔 College ID: **17427** -->
 
 <hr>
