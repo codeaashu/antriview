@@ -72,10 +72,10 @@ Your Ruthless, Real-Time AI Interviewer — Built for Pressure. Not Just Practic
 </div>
 
 <hr>
+<!--
+# 🚀 Getting Started Setup Procedure ⚙️ -->
 
-# 🚀 Getting Started Setup Procedure ⚙️
-
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<!--This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ### Environment Setup
 
@@ -103,9 +103,9 @@ yarn dev
 pnpm dev
 # or
 bun dev
-```
+``` -->
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<!-- Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
@@ -120,7 +120,7 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+ ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
@@ -131,9 +131,9 @@ When deploying to Vercel or any other platform, make sure to add all environment
 1. Go to your Vercel dashboard
 2. Select your project
 3. Go to Settings → Environment Variables
-4. Add all the variables from `.env.local`
+4. Add all the variables from `.env.local` -->
 
-**Required Environment Variables:**
+<!-- **Required Environment Variables:**
 - `FIREBASE_PROJECT_ID`
 - `FIREBASE_PRIVATE_KEY`
 - `FIREBASE_CLIENT_EMAIL`
@@ -146,11 +146,11 @@ When deploying to Vercel or any other platform, make sure to add all environment
 - `NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID`
 - `GOOGLE_GENERATIVE_AI_API_KEY`
 - `NEXT_PUBLIC_VAPI_WEB_TOKEN`
-- `NEXT_PUBLIC_VAPI_WORKFLOW_ID`
+- `NEXT_PUBLIC_VAPI_WORKFLOW_ID` -->
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<!-- Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-<hr>
+-->
 
 <!-- ## 👨‍💻 Built By
 
@@ -158,5 +158,3 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 [🌐 www.ashutoshkumar.me](https://www.ashutoshkumar.me)  
 [💻 GitHub: @codeaashu](https://github.com/codeaashu)  
 🆔 College ID: **17427** -->
-
-<hr>
