@@ -157,4 +157,4 @@ When deploying to Vercel or any other platform, make sure to add all environment
 **Ashutosh Kumar**  
 [🌐 www.ashutoshkumar.me](https://www.ashutoshkumar.me)  
 [💻 GitHub: @codeaashu](https://github.com/codeaashu)  
-🆔 College ID: **17427** --
+🆔 College ID: **17427** ---
