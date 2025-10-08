@@ -16,7 +16,7 @@ const normalizeTechName = (tech: string) => {
 const checkIconExists = async (url: string) => {
   try {
     const response = await fetch(url, { method: "HEAD" });
-    return response.ok; // Returns true if the icon exists
+    return response.ok;
   } catch {
     return false;
   }
@@ -63,11 +63,10 @@ export function getProfilePictureUrl(user: User): string {
     return user.profilePicture;
   }
   
-  // Generate a default avatar using UI Avatars service
+
   return `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=random&color=fff&size=128&bold=true`;
 }
 
 export function generateDefaultProfilePicture(name: string): string {
-  // Use UI Avatars service for generating avatar based on name
   return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=random&color=fff&size=128&bold=true`;
 }
